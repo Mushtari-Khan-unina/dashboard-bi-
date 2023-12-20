@@ -51,15 +51,15 @@ otherwise been obscured in the original data.
     """) 
 
     # Load your data
-    data = pd.read_csv('Final_BI_DS.csv')
+    data2 = pd.read_csv('Final_BI_DS.csv')
     df = pd.read_csv('Final_BI_DS.csv')
 
     # Display the data using a DataFrame widget
     # st.write(data)
 
     # Add a slider to control the number of rows displayed
-    num_rows = st.slider('Select the number of rows to display', min_value=1, max_value=len(data), value=50)
-    st.write(data.head(num_rows))
+    num_rows = st.slider('Select the number of rows to display', min_value=1, max_value=len(data2), value=50)
+    st.write(data2.head(num_rows))
     
 def insights_page():
     #st.image("Slide3.PNG", use_column_width=True)
@@ -70,6 +70,7 @@ def code_page():
    # st.image("Slide2.PNG", use_column_width=True)
     st.title("Code")
     st.write("This is the Visualizations page of the app.")
+
     # Create an interactive histogram with increased space between bins
     fig = px.histogram(df, x='temperature_mean', nbins=20, title='Distribution of Temperature',
                    labels={'temperature_mean': 'Temperature Mean'}, marginal='box')
